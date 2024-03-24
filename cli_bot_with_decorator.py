@@ -34,8 +34,9 @@ def change_contact(args, contacts):
 
 @input_error
 def show_contact(args, contacts):
-    name, _ = args
-    return contacts[name]
+    name = args[0]
+    if name in contacts:
+        return contacts[name]
 
 @input_error
 def show_all_contacts(contacts):
